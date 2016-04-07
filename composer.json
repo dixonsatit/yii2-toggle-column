@@ -1,0 +1,21 @@
+{
+    "name": "dixonstarter/yii2-toggle-column",
+    "description": "yii2 toggle column for update in gridview",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","toggle column"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Sathit Seethaphon",
+            "email": "dixonsatit@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "dixonstarter\\grid\\togglecolumn\\": ""
+        }
+    }
+}
