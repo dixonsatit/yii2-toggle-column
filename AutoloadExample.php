@@ -1,6 +1,6 @@
 <?php
 
-namespace dixonstarter\grid\togglecolumn;
+namespace dixonstarter\grid;
 
 /**
  * This is just an example.

@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "dixonstarter\\grid\\togglecolumn\\": ""
+            "dixonstarter\\grid\\": ""
         }
     }
 }
