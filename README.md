@@ -2,7 +2,7 @@ Yii2 Toggle Column
 ==================
 yii2 toggle column for update in gridview
 
-![](thumbnail.gif)
+![](img/thumbnail.gif)
 
 Installation
 ------------
@@ -96,4 +96,102 @@ class Post extends \yii\db\ActiveRecord implements \dixonstarter\togglecolumn\To
     ];
   }
 }
+```
+
+## Custom link style
+
+### Clean
+
+![](img/clean.png)
+
+```php
+
+    [
+      'attribute'=>'status',
+      'class'=>'\dixonstarter\togglecolumn\ToggleColumn',
+      'options'=>['style'=>'width:50px;'],
+      'linkTemplateOn'=>'<a class="toggle-column" data-pjax="0" href="{url}">{label}</a>',
+      'linkTemplateOff'=>'<a class="toggle-column" data-pjax="0" href="{url}">{label}</a>'
+    ],
+
+```
+
+### Button
+
+![](img/button.png)
+
+```php
+
+  [
+    'attribute'=>'status',
+    'class'=>'\dixonstarter\togglecolumn\ToggleColumn',
+    'options'=>['style'=>'width:50px;'],
+    'linkTemplateOn'=>'<a class="toggle-column btn btn-default btn-xs btn-block" data-pjax="0" href="{url}">{label}</a>',
+    'linkTemplateOff'=>'<a class="toggle-column btn btn-default btn-xs btn-block" data-pjax="0" href="{url}">{label}</a>'
+  ],
+
+```
+
+### Icon
+
+![](img/icon.png)
+
+```php
+
+[
+  'attribute'=>'status',
+  'class'=>'\dixonstarter\togglecolumn\ToggleColumn',
+  'options'=>['style'=>'width:50px;'],
+  'linkTemplateOn'=>'<a class="toggle-column btn btn-default btn-xs btn-block" data-pjax="0" href="{url}"><i  class="glyphicon glyphicon-ok"></i> </a>',
+  'linkTemplateOff'=>'<a class="toggle-column btn btn-default btn-xs btn-block" data-pjax="0" href="{url}"><i  class="glyphicon glyphicon-remove"></i> </a>'
+],
+
+```
+
+### Icon Color
+
+![](img/icon-color.png)
+
+```php
+
+[
+  'attribute'=>'status',
+  'class'=>'\dixonstarter\togglecolumn\ToggleColumn',
+  'options'=>['style'=>'width:50px;'],
+  'linkTemplateOn'=>'<a class="toggle-column btn btn-warning btn-xs " data-pjax="0" href="{url}"><i  class="glyphicon glyphicon-ok"></i> </a>',
+  'linkTemplateOff'=>'<a class="toggle-column btn btn-default btn-xs " data-pjax="0" href="{url}"><i  class="glyphicon glyphicon-remove"></i> </a>'
+],
+
+```
+
+### Icon & Label
+
+![](img/icon-label.png)
+
+```php
+
+[
+  'attribute'=>'status',
+  'class'=>'\dixonstarter\togglecolumn\ToggleColumn',
+  'options'=>['style'=>'width:50px;'],
+  'linkTemplateOn'=>'<a class="toggle-column btn btn-default btn-xs btn-block" data-pjax="0" href="{url}"><i  class="glyphicon glyphicon-ok"></i> {label}</a>',
+  'linkTemplateOff'=>'<a class="toggle-column btn btn-default btn-xs btn-block" data-pjax="0" href="{url}"><i  class="glyphicon glyphicon-remove"></i> {label}</a>'
+],
+
+```
+
+### Icon & Button color
+
+![](img/icon-label-color.png)
+
+```php
+
+[
+  'attribute'=>'status',
+  'class'=>'\dixonstarter\togglecolumn\ToggleColumn',
+  'options'=>['style'=>'width:50px;'],
+  'linkTemplateOn'=>'<a class="toggle-column btn btn-primary btn-xs btn-block" data-pjax="0" href="{url}"><i  class="glyphicon glyphicon-ok"></i> {label}</a>',
+  'linkTemplateOff'=>'<a class="toggle-column btn btn-default btn-xs btn-block" data-pjax="0" href="{url}"><i  class="glyphicon glyphicon-remove"></i> {label}</a>'
+],
+
 ```
