@@ -2,6 +2,8 @@ Yii2 Toggle Column
 ==================
 yii2 toggle column for update in gridview
 
+![](thumbnail.gif)
+
 Installation
 ------------
 
