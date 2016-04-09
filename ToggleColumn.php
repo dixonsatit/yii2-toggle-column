@@ -25,21 +25,27 @@ class ToggleColumn extends DataColumn
 
     public $content;
 
-    /**
-     * [$linkTemplateOn link template for on value]
-     * default <a class="toggle-column" data-pjax="0" href="{url}">{label}</a>'
-     * icon <a class="toggle-column btn btn-primary btn-xs btn-block" data-pjax="0" href="{url}"><i class="glyphicon glyphicon-ok"></i> {label}</a>'
-     * @var string
-     */
-    public $linkTemplateOn    = '<a class="toggle-column" data-pjax="0" href="{url}">{label}</a>';
+    //public $contentOptions = ['class'=>'text-center'];
 
     /**
      * [$linkTemplateOn link template for on value]
-     * default <a class="toggle-column" data-pjax="0" href="{url}">{label}</a>'
-     * icon <a class="toggle-column btn btn-info btn-xs btn-block" data-pjax="0" href="{url}"><i class="glyphicon glyphicon-off"></i> {label}</a>
+     * @example
+     * default <a class="toggle-column" data-pjax="0" href="{url}">{label}</a>
+     * icon & label <a class="toggle-column btn btn-primary btn-xs btn-block" data-pjax="0" href="{url}"><i class="glyphicon glyphicon-ok"></i> {label}</a>'
+     * icon <a class="toggle-column btn btn-primary btn-xs btn-block" data-pjax="0" href="{url}"><i class="glyphicon glyphicon-ok"></i></a>
      * @var string
      */
-    public $linkTemplateOff   = '<a class="toggle-column" data-pjax="0" href="{url}">{label}</a>';
+    public $linkTemplateOn    = '<a class="toggle-column btn btn-primary btn-xs btn-block" data-pjax="0" href="{url}"><i  class="glyphicon glyphicon-ok"></i> {label}</a>';
+
+    /**
+     * [$linkTemplateOn link template for off value]
+     * @example
+     * default <a class="toggle-column" data-pjax="0" href="{url}">{label}</a>
+     * icon & label <a class="toggle-column btn btn-info btn-xs btn-block" data-pjax="0" href="{url}"><i class="glyphicon glyphicon-off"></i> {label}</a>
+     * icon <a class="toggle-column btn btn-info btn-xs btn-block" data-pjax="0" href="{url}"><i class="glyphicon glyphicon-time"></i> </a>
+     * @var string
+     */
+    public $linkTemplateOff   = '<a class="toggle-column btn btn-default btn-xs btn-block" data-pjax="0" href="{url}"><i  class="glyphicon glyphicon-remove"></i> {label}</a>';
 
     /**
      * Array toggle items
@@ -118,8 +124,9 @@ class ToggleColumn extends DataColumn
         $js = <<<JS
 $("a.toggle-column").on("click", function(e) {
     e.preventDefault();
+    var pjaxId = $(e.target).closest(".grid-view").parent().attr("id");
+    $(this).button('loading');
     $.post($(this).attr("href"), function(data) {
-      var pjaxId = $(e.target).closest(".grid-view").parent().attr("id");
       $.pjax.reload({container:"#" + pjaxId});
     });
     return false;
